@@ -1,0 +1,83 @@
+.card__button {
+  display: none;
+  margin: 0;
+  background-color: #a8dadc;
+  border: solid 5px #fff;
+  border-radius: 10px;
+  color: #1d3557;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 1.5px;
+  transition: background-color 0.4s linear;
+}
+
+.card__button_size_xl {
+  width: 240px;
+  height: 74px;
+}
+
+.card__button_size_m {
+  display: inline;
+  width: 168px;
+  height: 51px;
+  margin-left: 24px;
+}
+
+.card__button_size_s {
+  background: center no-repeat url("../../images/stop-button.svg");
+  display: inline;
+  width: 51px;
+  height: 51px;
+  margin-left: 84px;
+}
+
+.card__button_type_unactive {
+  background: center no-repeat url("../../images/stop-button-unactive.svg");
+}
+
+.card__button_size_s:hover {
+  background: center no-repeat url("../../images/stop-button-active.svg");
+}
+
+.card__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 970px;
+  height: 400px;
+  background-color: #1d3557;
+  border: solid 5px #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card__main-screen {
+  width: 100%;
+  height: 301px;
+}
+
+.card__button-bar {
+  width: 100%;
+  height: 99px;
+  border-top: solid 5px #fff;
+  background-color: #457b9d;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.card__button:hover {
+  background-color: #e63946;
+  cursor: pointer;
+  transition: background-color 0.6s linear;
+}
+
+.card__button_type_unactive:hover {
+  cursor: auto;
+  background: center no-repeat url("../../images/stop-button-unactive.svg");
+}
