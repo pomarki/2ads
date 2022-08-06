@@ -38,8 +38,12 @@
   background: center no-repeat url("../../images/stop-button-unactive.svg");
 }
 
-.card__button_size_s:hover {
-  background: center no-repeat url("../../images/stop-button-active.svg");
+.card__button-close {
+  width: 45px;
+  height: 45px;
+  border: 0;
+  margin-left: 383px;
+  background: center no-repeat url("../../images/close-button.svg");
 }
 
 .card__container {
@@ -71,6 +75,10 @@
   justify-content: flex-start;
 }
 
+.card__button_size_s:hover {
+  background: center no-repeat url("../../images/stop-button-active.svg");
+}
+
 .card__button:hover {
   background-color: #e63946;
   cursor: pointer;
@@ -80,4 +88,8 @@
 .card__button_type_unactive:hover {
   cursor: auto;
   background: center no-repeat url("../../images/stop-button-unactive.svg");
+}
+
+.card__button-close:hover {
+  background: center no-repeat url("../../images/close-button-active.svg");
 }

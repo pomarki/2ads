@@ -12,6 +12,7 @@
       content="алгоритмы, богосорт, метод пузырька, бинарное дерево"
     />
     <meta name="author" content="Денис Шалаев" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="vendor/normalize.css" />
     <link rel="stylesheet" href="pages/index.css" />
     <script src="scripts/index.js" defer></script>
@@ -31,11 +32,12 @@
       <button class="card__button card__button_size_xl">богосорт</button>
     </main>
     <section class="card__container">
-        <div class="card__main-screen">тут будет канвас</div>
+        <div class="card__main-screen"><canvas id="main-screen"></canvas></div>
         <div class="card__button-bar">
-            <button class="card__button card__button_size_m">mix</button>
-            <button class="card__button card__button_size_m">sort</button>
+            <button class="card__button card__button_size_m" id="mix-button">mix</button>
+            <button class="card__button card__button_size_m" id="sort-button">sort</button>
             <button class="card__button card__button_size_s"></button>
+            <button class="card__button-close"></button>
         </div>
     </section>
     <footer class="footer"></footer>
