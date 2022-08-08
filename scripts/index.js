@@ -1,8 +1,9 @@
 const mainScreen = document.getElementById("main-screen");
 const mixButton = document.getElementById("mix-button");
 const sortButton = document.getElementById("sort-button");
+import { colorArr } from "./data.js";
 
-context = mainScreen.getContext("2d");
+let context = mainScreen.getContext("2d");
 
 mainScreen.width = 970;
 mainScreen.height = 301;
@@ -28,15 +29,11 @@ const getMainArr = () => {
 };
 
 const renderRow = () => {
-  let colorArr = ["#ff595e", "#ffca3a", "#8ac926", "#1982c4", "#6a4c93"];
-  
-
   getMainArr();
 
   context.clearRect(0, 0, mainScreen.width, mainScreen.height);
 
   for (let i = 0; i <= mainArr.length - 1; i++) {
-
     let color = colorArr[Math.floor(mainArr[i] / 20)];
 
     context.fillStyle = color;
@@ -44,7 +41,5 @@ const renderRow = () => {
   }
   mainArr.splice(0, 100);
 };
-
-
 
 mixButton.addEventListener("click", () => renderRow());
