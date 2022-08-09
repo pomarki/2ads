@@ -1,45 +1,42 @@
-const mainScreen = document.getElementById("main-screen");
-const mixButton = document.getElementById("mix-button");
-const sortButton = document.getElementById("sort-button");
-import { colorArr } from "./data.js";
+import { getMainArr } from "./utils.js";
+import {
+  colorArr,
+  mainScreen,
+  mixButton,
+  sortButton,
+  referenceArray,
+  screen,
+} from "./data.js";
+let mixedArr = [];
 
-let context = mainScreen.getContext("2d");
-
-mainScreen.width = 970;
-mainScreen.height = 301;
-
-let referenceArray = [];
-
-for (let i = 1; i <= 100; i++) {
-  referenceArray.push(i);
-}
-
-let mainArr = [];
-
-const getMainArr = () => {
-  let currentReferenceArr = referenceArray.slice();
-  for (let i = 1; i <= 100; i++) {
-    let arrLength = currentReferenceArr.length;
-    let position = Math.floor(Math.random() * arrLength);
-    let newItem = currentReferenceArr.splice(position, 1)[0];
-    mainArr.push(newItem);
-  }
-
-  return mainArr;
+const clearScreen = () => {
+  screen.clearRect(0, 0, mainScreen.width, mainScreen.height);
 };
 
-const renderRow = () => {
-  getMainArr();
-
-  context.clearRect(0, 0, mainScreen.width, mainScreen.height);
-
-  for (let i = 0; i <= mainArr.length - 1; i++) {
-    let color = colorArr[Math.floor(mainArr[i] / 20)];
-
-    context.fillStyle = color;
-    context.fillRect(i * 9 + 40, 10, 3, mainArr[i] * 2);
+const renderRow = (arr) => {
+  for (let i = 0; i <= arr.length - 1; i++) {
+    let color = colorArr[Math.floor(arr[i] / 20)];
+    screen.fillStyle = color;
+    screen.fillRect(i * 9 + 40, 10, 3, arr[i] * 2);
   }
-  mainArr.splice(0, 100);
 };
 
-mixButton.addEventListener("click", () => renderRow());
+const renderMixRow = () => {
+  let arr = getMainArr(referenceArray);
+  clearScreen();
+  renderRow(arr);
+  arr.splice(0, 100);
+};
+
+const renderSortRow = () => {
+  let sorted = setInterval(() => {
+    for (let i = 0; i <= 15; i++) {
+      renderMixRow();
+    }
+   
+  }, 2000);
+  /* clearInterval(sorted); */
+};
+
+mixButton.addEventListener("click", () => renderMixRow());
+sortButton.addEventListener("click", () => renderSortRow());
