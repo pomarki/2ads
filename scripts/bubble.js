@@ -1,6 +1,5 @@
 let initialArr = [3, 38, 5, 44, 15, 36, 26, 27, 2, 46, 47, 4, 19, 50, 48];
 
-
 let iterations = 0;
 
 const checkRow = (arr) => {
@@ -12,19 +11,27 @@ const checkRow = (arr) => {
   return true;
 };
 
+const combArr = (arr) => {
+  let subTotal = arr.slice();
+  for (i = 0; i <= subTotal.length - 2; i++) {
+    if (subTotal[i] > subTotal[i + 1])
+    subTotal.splice(i, 2, subTotal[i + 1], subTotal[i]);
+    
+  }
+  return subTotal;
+};
+
 const sortRow = (arr) => {
   let result = arr.slice();
 
   while (!checkRow(result)) {
-    iterations++;
-    for (i = 0; i <= result.length - 2; i++) {
-      if (result[i] > result[i + 1])
-        result.splice(i, 2, result[i + 1], result[i]);
-    }
-    console.log(result);
+    result = combArr(result); 
+    
   }
 
   return result;
 };
 
-console.log(sortRow(initialArr), `итераций: ${iterations}`);
+
+
+

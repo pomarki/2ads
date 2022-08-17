@@ -1,9 +1,10 @@
-import { getMainArr } from "./utils.js";
+import { getMainArr, checkRow } from "./utils.js";
 import {
   colorArr,
   mainScreen,
   mixButton,
   sortButton,
+  stopButton,
   referenceArray,
   screen,
 } from "./data.js";
@@ -12,6 +13,10 @@ let mixedArr = [];
 const clearScreen = () => {
   screen.clearRect(0, 0, mainScreen.width, mainScreen.height);
 };
+
+const stopRender = (func) => {
+  clearInterval(func);
+}
 
 const renderRow = (arr) => {
   for (let i = 0; i <= arr.length - 1; i++) {
@@ -30,13 +35,14 @@ const renderMixRow = () => {
 
 const renderSortRow = () => {
   let sorted = setInterval(() => {
-    for (let i = 0; i <= 15; i++) {
+    
       renderMixRow();
-    }
+    
    
-  }, 2000);
-  /* clearInterval(sorted); */
+  }, 1000);
+  stopButton.addEventListener("click", ()=> {stopRender(sorted)});
 };
 
 mixButton.addEventListener("click", () => renderMixRow());
 sortButton.addEventListener("click", () => renderSortRow());
+
