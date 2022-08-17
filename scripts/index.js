@@ -8,7 +8,11 @@ import {
   referenceArray,
   screen,
 } from "./data.js";
+
+import { combArr } from "./bubble.js";
+
 let mixedArr = [];
+let intermediateArr = [];
 
 const clearScreen = () => {
   screen.clearRect(0, 0, mainScreen.width, mainScreen.height);
@@ -16,7 +20,7 @@ const clearScreen = () => {
 
 const stopRender = (func) => {
   clearInterval(func);
-}
+};
 
 const renderRow = (arr) => {
   for (let i = 0; i <= arr.length - 1; i++) {
@@ -27,22 +31,30 @@ const renderRow = (arr) => {
 };
 
 const renderMixRow = () => {
-  let arr = getMainArr(referenceArray);
+  mixedArr = getMainArr(referenceArray);
   clearScreen();
-  renderRow(arr);
-  arr.splice(0, 100);
+  renderRow(mixedArr);
+  /* mixedArr.splice(0, 100); */
 };
 
 const renderSortRow = () => {
+  intermediateArr.length === 0
+    ? (intermediateArr = mixedArr.slice())
+    : intermediateArr;
+
   let sorted = setInterval(() => {
     
-      renderMixRow();
+      clearScreen();
+      intermediateArr = combArr(intermediateArr);
+      renderRow(intermediateArr);
     
-   
-  }, 1000);
-  stopButton.addEventListener("click", ()=> {stopRender(sorted)});
+    
+  }, 500);
+
+  stopButton.addEventListener("click", () => {
+    stopRender(sorted);
+  });
 };
 
 mixButton.addEventListener("click", () => renderMixRow());
 sortButton.addEventListener("click", () => renderSortRow());
-
