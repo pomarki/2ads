@@ -23,7 +23,7 @@
   display: inline;
   width: 168px;
   height: 51px;
-  margin-left: 24px;
+  /* margin-left: 24px; */
 }
 
 .card__button_size_s {
@@ -31,7 +31,7 @@
   display: inline;
   width: 51px;
   height: 51px;
-  margin-left: 84px;
+  /* margin-left: 84px; */
 }
 
 .card__button_type_unactive {
@@ -42,7 +42,7 @@
   width: 45px;
   height: 45px;
   border: 0;
-  margin-left: 383px;
+ /*  margin-left: 303px; */
   background: center no-repeat url("../../images/close-button.svg");
 }
 
@@ -54,6 +54,7 @@
   width: 970px;
   height: 400px;
   background-color: #1d3557;
+  
   border: solid 5px #fff;
   border-radius: 10px;
   overflow: hidden;
@@ -68,11 +69,30 @@
   width: 100%;
   height: 99px;
   border-top: solid 5px #fff;
-  background-color: #457b9d;
-  display: flex;
+  background-color: #e63946;
+ /*  background-color: #457b9d; */
+  /* display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-start; */
+  display: grid;
+  grid-template-columns: 168px 168px 51px 168px 45px;
+  grid-template-rows: auto;
+  gap: 20px;
+}
+
+.card__iteration-window {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 168px;
+  height: 51px;
+  margin: 0;
+  /* margin: 0 0 0 24px; */
+  background-color: #a8dadc;
+  border: solid 5px #fff;
+  border-radius: 10px;
+  /* padding: 0; */
 }
 
 .card__button_size_s:hover {

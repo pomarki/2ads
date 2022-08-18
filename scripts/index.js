@@ -38,17 +38,21 @@ const renderMixRow = () => {
 };
 
 const renderSortRow = () => {
+  let iterations = 0;
   intermediateArr.length === 0
     ? (intermediateArr = mixedArr.slice())
     : intermediateArr;
 
   let sorted = setInterval(() => {
-    
-      clearScreen();
-      intermediateArr = combArr(intermediateArr);
-      renderRow(intermediateArr);
-    
-    
+    clearScreen();
+    intermediateArr = combArr(intermediateArr);
+    renderRow(intermediateArr);
+    iterations ++
+    console.log(iterations);
+    if (checkRow(intermediateArr)) {
+      stopRender(sorted);
+      return;
+    }
   }, 500);
 
   stopButton.addEventListener("click", () => {
