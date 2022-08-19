@@ -53,9 +53,11 @@ const renderSortRow = () => {
     iterationWindow.textContent = iterations;
     if (checkRow(intermediateArr)) {
       stopRender(sorted);
+      intermediateArr.splice(0, 100)
+      iterations = 0;
       return;
     }
-  }, 250);
+  }, 150);
 
   stopButton.addEventListener("click", () => {
     stopRender(sorted);
