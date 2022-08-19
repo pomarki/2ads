@@ -36,7 +36,7 @@ const renderMixRow = () => {
   mixedArr = getMainArr(referenceArray);
   clearScreen();
   renderRow(mixedArr);
-  /* mixedArr.splice(0, 100); */
+  
 };
 
 const renderSortRow = () => {
@@ -51,6 +51,7 @@ const renderSortRow = () => {
     iterations++;
 
     iterationWindow.textContent = iterations;
+    
     if (checkRow(intermediateArr)) {
       stopRender(sorted);
       intermediateArr.splice(0, 100)
