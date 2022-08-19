@@ -32,8 +32,13 @@
   height: 51px;
 }
 
-.card__button_type_unactive {
+/* .card__button_type_unactive {
   background: center no-repeat url("../../images/stop-button-unactive.svg");
+}
+ */
+.card__button_type_inactive {
+  background-color: gray;
+  cursor: auto;
 }
 
 .card__button-close {
@@ -44,15 +49,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color:#a8dadc;
-  /* box-sizing: border-box; */
+  background-color: #a8dadc;
+
   justify-self: end;
+  transition: background-color 0.4s linear;
 
-  /*  line-height: 0; */
-  /* background: center no-repeat url("../../images/close-button.svg"); */
-}
-
-.card__button-close-title {
   margin: 0;
   font-size: 30px;
   font-weight: 900;
@@ -115,19 +116,26 @@
 .card__button:hover {
   background-color: #e63946;
   cursor: pointer;
+  color: #fff;
   transition: background-color 0.6s linear;
 }
 
-.card__button_type_unactive:hover {
+/* .card__button_type_unactive:hover {
   cursor: auto;
-  /* background: center no-repeat url("../../images/stop-button-unactive.svg"); */
-}
+} */
 
 .card__button-close:hover {
-  /* background: center no-repeat url("../../images/close-button-active.svg"); */
+  background-color: #e63946;
+  color: #fff;
   cursor: pointer;
 }
 
 .card__iteration-window:hover {
   cursor: default;
+}
+
+.card__button_type_inactive:hover {
+  cursor: auto;
+  background-color: gray;
+  color: #1d3557;
 }

@@ -1,4 +1,4 @@
-let initialArr = [3, 38, 5, 44, 15, 36, 26, 27, 2, 46, 47, 4, 19, 50, 48];
+/* let initialArr = [3, 38, 5, 44, 15, 36, 26, 27, 2, 46, 47, 4, 19, 50, 48];
 
 let iterations = 0;
 
@@ -9,9 +9,9 @@ const checkRow = (arr) => {
     }
   }
   return true;
-};
+}; */
 
-const combArr = (arr) => {
+const bubbleSort = (arr) => {
   let subTotal = arr.slice();
   for (let i = 0; i <= subTotal.length - 2; i++) {
     if (subTotal[i] > subTotal[i + 1])
@@ -20,7 +20,7 @@ const combArr = (arr) => {
   return subTotal;
 };
 
-const sortRow = (arr) => {
+/* const sortRow = (arr) => {
   let result = arr.slice();
 
   while (!checkRow(result)) {
@@ -28,6 +28,6 @@ const sortRow = (arr) => {
   }
 
   return result;
-};
+}; */
 
-export { combArr };
+export { bubbleSort };

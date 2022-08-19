@@ -10,7 +10,7 @@ import {
   screen,
 } from "./data.js";
 
-import { combArr } from "./bubble.js";
+import { bubbleSort } from "./bubble.js";
 
 let mixedArr = [];
 let intermediateArr = [];
@@ -23,6 +23,21 @@ const clearScreen = () => {
 const stopRender = (func) => {
   clearInterval(func);
 };
+
+const disableButton = (buttonId) => {
+  buttonId.classList.add("card__button_type_inactive");
+  buttonId.removeEventListener("click", renderMixRow);
+}
+
+const enableButton = (buttonId) => {
+  buttonId.classList.remove("card__button_type_inactive");
+  mixButton.addEventListener("click", renderMixRow);
+}
+
+const switchButton = (buttonId) => {
+
+}
+
 
 const renderRow = (arr) => {
   for (let i = 0; i <= arr.length - 1; i++) {
@@ -40,13 +55,14 @@ const renderMixRow = () => {
 };
 
 const renderSortRow = () => {
+  disableButton(mixButton);
   intermediateArr.length === 0
     ? (intermediateArr = mixedArr.slice())
     : intermediateArr;
 
   let sorted = setInterval(() => {
     clearScreen();
-    intermediateArr = combArr(intermediateArr);
+    intermediateArr = bubbleSort(intermediateArr);
     renderRow(intermediateArr);
     iterations++;
 
@@ -56,6 +72,7 @@ const renderSortRow = () => {
       stopRender(sorted);
       intermediateArr.splice(0, 100)
       iterations = 0;
+      enableButton(mixButton);
       return;
     }
   }, 150);
@@ -65,5 +82,7 @@ const renderSortRow = () => {
   });
 };
 
-mixButton.addEventListener("click", () => renderMixRow());
+enableButton(mixButton);
+
+/* mixButton.addEventListener("click", () => renderMixRow()); */
 sortButton.addEventListener("click", () => renderSortRow());
