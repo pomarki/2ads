@@ -5,6 +5,7 @@ import {
   mixButton,
   sortButton,
   stopButton,
+  iterationWindow,
   referenceArray,
   screen,
 } from "./data.js";
@@ -13,6 +14,7 @@ import { combArr } from "./bubble.js";
 
 let mixedArr = [];
 let intermediateArr = [];
+let iterations = 0;
 
 const clearScreen = () => {
   screen.clearRect(0, 0, mainScreen.width, mainScreen.height);
@@ -38,7 +40,6 @@ const renderMixRow = () => {
 };
 
 const renderSortRow = () => {
-  let iterations = 0;
   intermediateArr.length === 0
     ? (intermediateArr = mixedArr.slice())
     : intermediateArr;
@@ -47,13 +48,14 @@ const renderSortRow = () => {
     clearScreen();
     intermediateArr = combArr(intermediateArr);
     renderRow(intermediateArr);
-    iterations ++
-    console.log(iterations);
+    iterations++;
+
+    iterationWindow.textContent = iterations;
     if (checkRow(intermediateArr)) {
       stopRender(sorted);
       return;
     }
-  }, 500);
+  }, 250);
 
   stopButton.addEventListener("click", () => {
     stopRender(sorted);

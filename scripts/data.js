@@ -4,9 +4,19 @@ const mainScreen = document.getElementById("main-screen");
 const mixButton = document.getElementById("mix-button");
 const sortButton = document.getElementById("sort-button");
 const stopButton = document.getElementById("stop-button");
+const iterationWindow = document.getElementById("iteration-window");
 const referenceArray = getReferenceArr();
 let screen = mainScreen.getContext("2d");
 mainScreen.width = 970;
 mainScreen.height = 301;
 
-export { colorArr, mainScreen, mixButton, sortButton, stopButton, referenceArray, screen };
+export {
+  colorArr,
+  mainScreen,
+  mixButton,
+  sortButton,
+  stopButton,
+  iterationWindow,
+  referenceArray,
+  screen,
+};
