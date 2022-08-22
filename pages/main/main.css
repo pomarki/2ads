@@ -1,6 +1,34 @@
-.main {
+.main__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 120px;
+  list-style: none;
+  padding: 0;
+}
+
+.main__card {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a8dadc;
+  border: solid 5px #fff;
+  border-radius: 10px;
+  color: #1d3557;
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.2;
+  letter-spacing: 1.5px;
+  width: 240px;
+  height: 74px;
+  transition: background-color 0.4s linear;
+}
+
+.main__card:hover {
+  background-color: #e63946;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color 0.6s linear;
 }

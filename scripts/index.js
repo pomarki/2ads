@@ -1,12 +1,21 @@
-import { getMainArr, checkRow } from "./utils.js";
+import {
+  getMainArr,
+  checkRow,
+  disableButton,
+  enableButton,
+  closeCard,
+} from "./utils.js";
 import {
   colorArr,
   mainScreen,
   mixButton,
   sortButton,
+  closeButton,
+  actualCard,
   iterationWindow,
   referenceArray,
   screen,
+  initialCards,
   PAUSE_DURATION,
 } from "./data.js";
 
@@ -18,24 +27,14 @@ let iterations = 0;
 let sorted;
 let sortButtonActive = true;
 
-const clearScreen = () => {
-  screen.clearRect(0, 0, mainScreen.width, mainScreen.height);
+const clearScreen = (item) => {
+  item.clearRect(0, 0, mainScreen.width, mainScreen.height);
 };
 
 const stopRender = (func) => {
   sortButtonActive = !sortButtonActive;
   sortButton.textContent = "sort";
   clearInterval(func);
-};
-
-const disableButton = (buttonId) => {
-  buttonId.classList.add("card__button_type_inactive");
-  buttonId.disabled = true;
-};
-
-const enableButton = (buttonId) => {
-  buttonId.classList.remove("card__button_type_inactive");
-  buttonId.disabled = false;
 };
 
 const renderRow = (arr) => {
@@ -48,7 +47,7 @@ const renderRow = (arr) => {
 
 const renderMixRow = () => {
   mixedArr = getMainArr(referenceArray);
-  clearScreen();
+  clearScreen(screen);
   renderRow(mixedArr);
   enableButton(sortButton);
 };
@@ -56,7 +55,7 @@ const renderMixRow = () => {
 const sortedArr = () => {
   sortButtonActive = !sortButtonActive;
   sorted = setInterval(() => {
-    clearScreen();
+    clearScreen(screen);
     intermediateArr = bubbleSort(intermediateArr);
     renderRow(intermediateArr);
     iterations++;
@@ -85,3 +84,6 @@ const renderSortRow = () => {
 
 mixButton.addEventListener("click", renderMixRow);
 sortButton.addEventListener("click", renderSortRow);
+closeButton.addEventListener("click", () => {
+  closeCard(actualCard);
+});

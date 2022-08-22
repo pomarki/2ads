@@ -28,4 +28,20 @@ const checkRow = (arr) => {
   return true;
 };
 
-export { getReferenceArr, getMainArr, checkRow };
+const disableButton = (buttonId) => {
+  buttonId.classList.add("card__button_type_inactive");
+  buttonId.disabled = true;
+};
+
+const enableButton = (buttonId) => {
+  buttonId.classList.remove("card__button_type_inactive");
+  buttonId.disabled = false;
+};
+
+const closeCard = (card) => {
+card.classList.add("card_type_inactive");
+};
+
+
+
+export { getReferenceArr, getMainArr, checkRow, disableButton, enableButton, closeCard };

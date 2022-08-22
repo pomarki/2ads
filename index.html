@@ -20,16 +20,18 @@
   </head>
   <body class="body">
     <header class="header"></header>
-    <main class="main">
-      <button class="card__button card__button_size_xl">пузырек</button>
-      <button class="card__button card__button_size_xl">шейкер</button>
-      <button class="card__button card__button_size_xl">расческа</button>
-      <button class="card__button card__button_size_xl">вставка</button>
-      <button class="card__button card__button_size_xl">выбор</button>
-      <button class="card__button card__button_size_xl">быстрая</button>
-      <button class="card__button card__button_size_xl">слияние</button>
-      <button class="card__button card__button_size_xl">пирамидальная</button>
-      <button class="card__button card__button_size_xl">богосорт</button>
+    <main>
+      <ul class="main__list">
+        <li class="main__card">пузырек</li>
+        <li class="main__card">шейкер</li>
+        <li class="main__card">расческа</li>
+        <li class="main__card">вставка</li>
+        <li class="main__card">выбор</li>
+        <li class="main__card">быстрая</li>
+        <li class="main__card">слияние</li>
+        <li class="main__card">пирамидальная</li>
+        <li class="main__card">богосорт</li>
+      </ul>
     </main>
     <section class="card__container">
       <div class="card__main-screen"><canvas id="main-screen"></canvas></div>
@@ -38,18 +40,20 @@
           mix
         </button>
         <button
-          class="card__button card__button_size_m card__button_type_inactive" disabled="disabled"
+          class="card__button card__button_size_m card__button_type_inactive"
+          disabled="disabled"
           id="sort-button"
         >
           sort
         </button>
 
         <p class="card__iteration-window" id="iteration-window"></p>
-        <button class="card__button-close" aria-label="Close">
+        <button class="card__button-close" id="close-button" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
     </section>
     <footer class="footer"></footer>
+    <template id="main-card-template"></template>
   </body>
 </html>
