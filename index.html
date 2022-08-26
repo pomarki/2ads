@@ -15,23 +15,13 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="vendor/normalize.css" />
     <link rel="stylesheet" href="pages/index.css" />
-    <script type="module" src="scripts/index.js" defer></script>
+ <!--    <script type="module" src="scripts/index.js" defer></script> -->
     <title>Алгоритмы и структуры</title>
   </head>
   <body class="body">
     <header class="header"></header>
     <main>
-      <ul class="main__list">
-        <li class="main__card">пузырек</li>
-        <li class="main__card">шейкер</li>
-        <li class="main__card">расческа</li>
-        <li class="main__card">вставка</li>
-        <li class="main__card">выбор</li>
-        <li class="main__card">быстрая</li>
-        <li class="main__card">слияние</li>
-        <li class="main__card">пирамидальная</li>
-        <li class="main__card">богосорт</li>
-      </ul>
+      <ul class="main__list"></ul>
     </main>
     <section class="card__container">
       <div class="card__main-screen"><canvas id="main-screen"></canvas></div>
@@ -55,5 +45,7 @@
     </section>
     <footer class="footer"></footer>
     <template id="main-card-template"></template>
+    <template id="button-card-template"><li class="main__card"></li></template>
+    <script type="module" src="scripts/index.js"></script>
   </body>
 </html>

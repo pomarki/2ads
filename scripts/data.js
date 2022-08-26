@@ -6,21 +6,22 @@ const sortButton = document.getElementById("sort-button");
 const iterationWindow = document.getElementById("iteration-window");
 const closeButton = document.getElementById("close-button");
 const actualCard = document.querySelector(".card__container");
+const mainList = document.querySelector(".main__list");
 const referenceArray = getReferenceArr();
 let screen = mainScreen.getContext("2d");
 mainScreen.width = 970;
 mainScreen.height = 301;
 const PAUSE_DURATION = 150;
 const initialCards = [
-  "пузырек",
-  "шейкер",
-  "расческа",
-  "вставка",
-  "выбор",
-  "быстрая",
-  "слияние",
-  "пирамидальная",
-  "богосорт",
+  {id: 1, title: "пузырек"},
+  {id: 2, title: "шейкер"},
+  {id: 3, title: "расческа"},
+  {id: 4, title: "вставка"},
+  {id: 5, title: "выбор"},
+  {id: 6, title: "быстрая"},
+  {id: 7, title: "слияние"},
+  {id: 8, title: "пирамидальная"},
+  {id: 9, title: "богосорт"},
 ];
 
 export {
@@ -31,6 +32,7 @@ export {
   closeButton,
   iterationWindow,
   actualCard,
+  mainList,
   referenceArray,
   screen,
   initialCards,

@@ -13,6 +13,7 @@ import {
   closeButton,
   actualCard,
   iterationWindow,
+  mainList,
   referenceArray,
   screen,
   initialCards,
@@ -20,6 +21,7 @@ import {
 } from "./data.js";
 
 import { bubbleSort } from "./bubble.js";
+import { ButtonCard } from "../components/ButtonCard.js";
 
 let mixedArr = [];
 let intermediateArr = [];
@@ -87,3 +89,12 @@ sortButton.addEventListener("click", renderSortRow);
 closeButton.addEventListener("click", () => {
   closeCard(actualCard);
 });
+
+initialCards.forEach((item) => {
+const cardButton = new ButtonCard({title: item.title, id: item.id});
+const buttonElement = cardButton.generateCard();
+/* console.log({title: item.title, id: item.id}) */
+document.mainList.append(buttonElement);
+
+})
+
