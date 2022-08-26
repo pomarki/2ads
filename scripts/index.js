@@ -91,10 +91,12 @@ closeButton.addEventListener("click", () => {
 });
 
 initialCards.forEach((item) => {
-const cardButton = new ButtonCard({title: item.title, id: item.id});
+const cardButton = new ButtonCard(item);
 const buttonElement = cardButton.generateCard();
-/* console.log({title: item.title, id: item.id}) */
-document.mainList.append(buttonElement);
+
+mainList.append(buttonElement);
 
 })
+
+/* console.log(document.querySelector(".main__card")) */
 
