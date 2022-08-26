@@ -1,8 +1,8 @@
+import { MainCard } from "./MainCard.js";
 class ButtonCard {
   constructor(options) {
     this._title = options.title;
     this._id = options.id;
-    
   }
 
   _getTemplate() {
@@ -22,7 +22,9 @@ class ButtonCard {
   }
 
   _setEventListeners() {
-    this._element.addEventListener("click", () => console.log(this._title));
+    this._element.addEventListener("click", () => {
+      console.log(this._title);
+    });
   }
 }
 

@@ -1,16 +1,3 @@
-/* let initialArr = [3, 38, 5, 44, 15, 36, 26, 27, 2, 46, 47, 4, 19, 50, 48];
-
-let iterations = 0;
-
-const checkRow = (arr) => {
-  for (let i = 0; i <= arr.length - 1; i++) {
-    if (arr[i] > arr[i + 1]) {
-      return false;
-    }
-  }
-  return true;
-}; */
-
 const bubbleSort = (arr) => {
   let subTotal = arr.slice();
   for (let i = 0; i <= subTotal.length - 2; i++) {
@@ -19,15 +6,5 @@ const bubbleSort = (arr) => {
   }
   return subTotal;
 };
-
-/* const sortRow = (arr) => {
-  let result = arr.slice();
-
-  while (!checkRow(result)) {
-    result = combArr(result);
-  }
-
-  return result;
-}; */
 
 export { bubbleSort };

@@ -90,13 +90,20 @@ closeButton.addEventListener("click", () => {
   closeCard(actualCard);
 });
 
-initialCards.forEach((item) => {
+/* initialCards.forEach((item) => {
 const cardButton = new ButtonCard(item);
 const buttonElement = cardButton.generateCard();
 
 mainList.append(buttonElement);
 
-})
+}) */
 
-/* console.log(document.querySelector(".main__card")) */
+initialCards.forEach((item) => {
+  const buttonElement = document
+    .getElementById("button-card-template")
+    .content.querySelector(".main__card")
+    .cloneNode(true);
+  buttonElement.textContent = item.title;
 
+  mainList.append(buttonElement);
+});

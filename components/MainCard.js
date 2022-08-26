@@ -1,6 +1,6 @@
 import { bubbleSort } from "../scripts/bubble.js";
 
-const initialCards = [{ id: 1, title: "пузырек", sortAlgorithm: bubbleSort() }];
+
 
 class MainCard {
   constructor(options) {
@@ -8,7 +8,19 @@ class MainCard {
     this._title = options.title;
     this._sortAlgorithm = options.sortAlgorithm;
   }
+  _getTemplate() {
+    const mainElement = document
+      .getElementById("main-card-template")
+      .content.querySelector(".card__button-bar")
+      .cloneNode(true);
+    return mainElement;
+  }
 
-  
+  generateCard() {
+    this._element = this._getTemplate();
 
+    return this._element;
+  }
 }
+
+export { MainCard };
