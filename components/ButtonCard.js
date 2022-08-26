@@ -6,14 +6,16 @@ class ButtonCard {
   }
 
   _getTemplate() {
-    const template = document.querySelector("#button-card-template");
-    const buttonElement = template.content.cloneNode(true);
+    const buttonElement = document
+      .getElementById("main-card-template")
+      .content.querySelector(".main__card")
+      .cloneNode(true);
     return buttonElement;
   }
 
   generateCard() {
     this._element = this._getTemplate();
-    this._element.querySelector(".main__card").textContent = this._title;
+    this._element.textContent = this._title;
     this._setEventListeners();
     console.log(this._element);
     return this._element;
