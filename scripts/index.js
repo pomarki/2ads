@@ -4,6 +4,8 @@ import {
   disableButton,
   enableButton,
   closeCard,
+  getId,
+  getMethodById,
 } from "./utils.js";
 import {
   colorArr,
@@ -90,15 +92,15 @@ closeButton.addEventListener("click", () => {
   closeCard(actualCard);
 });
 
-/* initialCards.forEach((item) => {
+initialCards.forEach((item) => {
 const cardButton = new ButtonCard(item);
 const buttonElement = cardButton.generateCard();
 
 mainList.append(buttonElement);
 
-}) */
+})
 
-initialCards.forEach((item) => {
+/* initialCards.forEach((item) => {
   const buttonElement = document
     .getElementById("button-card-template")
     .content.querySelector(".main__card")
@@ -106,4 +108,6 @@ initialCards.forEach((item) => {
   buttonElement.textContent = item.title;
 
   mainList.append(buttonElement);
-});
+}); */
+
+mainList.addEventListener("click", (e) => {console.log(e.target.id)});

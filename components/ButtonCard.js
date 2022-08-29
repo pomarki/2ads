@@ -15,17 +15,19 @@ class ButtonCard {
 
   generateCard() {
     this._element = this._getTemplate();
+    this._element.setAttribute("id", `card-link${this._id}`);
     this._element.textContent = this._title;
-    this._setEventListeners();
+
+    /* this._setEventListeners(); */
 
     return this._element;
   }
 
-  _setEventListeners() {
+  /*   _setEventListeners() {
     this._element.addEventListener("click", () => {
       console.log(this._title);
     });
-  }
+  } */
 }
 
 export { ButtonCard };

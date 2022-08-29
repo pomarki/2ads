@@ -39,9 +39,28 @@ const enableButton = (buttonId) => {
 };
 
 const closeCard = (card) => {
-card.classList.add("card_type_inactive");
+  card.classList.add("card_type_inactive");
+};
+
+const getId = (str) => {
+  return Number(str[str.length - 1]);
+};
+
+const getMethodById = (arr, id) => {
+  const result = arr.filter((item) => {
+    return item.id === id;
+  });
+  return result[0]["method"];
 };
 
 
-
-export { getReferenceArr, getMainArr, checkRow, disableButton, enableButton, closeCard };
+export {
+  getReferenceArr,
+  getMainArr,
+  checkRow,
+  disableButton,
+  enableButton,
+  closeCard,
+  getId,
+  getMethodById,
+};
