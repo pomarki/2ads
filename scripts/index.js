@@ -94,7 +94,7 @@ const openMethodCard = (e) => {
   mixedArr = mixedArr.slice();
   sortMethod = getMethodById(initialCards, idItem, "method");
   iterationsWeight = getMethodById(initialCards, idItem, "weight");
-  console.log(iterationsWeight)
+  
 };
 
 mixButton.addEventListener("click", renderMixRow);
