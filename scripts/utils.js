@@ -44,9 +44,10 @@ const closeCard = (card) => {
   card.classList.add("card_type_inactive");
 };
 
-const openCard = (e, card, arr) => {
+const openCard = (e, card, methodArr, renderArr) => {
   const idItem = getId(e.target.id);
-  let method = getMethodById(arr, idItem);
+  renderArr = renderArr.slice();
+  let method = getMethodById(methodArr, idItem);
   card.classList.remove("card_type_inactive");
   console.log(method);
 }

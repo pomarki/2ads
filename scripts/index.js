@@ -103,4 +103,4 @@ mainList.append(buttonElement);
 })
 
 
-mainList.addEventListener("click", (e) => {openCard(e, actualCard, initialCards)});
+mainList.addEventListener("click", (e) => {openCard(e, actualCard, initialCards, mixedArr)});
