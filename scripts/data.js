@@ -1,4 +1,5 @@
 import { getReferenceArr } from "./utils.js";
+import { bubbleSort } from "./bubble.js";
 const colorArr = ["#ff595e", "#ffca3a", "#8ac926", "#1982c4", "#6a4c93"];
 const mainScreen = document.getElementById("main-screen");
 const mixButton = document.getElementById("mix-button");
@@ -12,16 +13,17 @@ let screen = mainScreen.getContext("2d");
 mainScreen.width = 970;
 mainScreen.height = 301;
 const PAUSE_DURATION = 150;
+
 const initialCards = [
-  {id: 1, title: "пузырек"},
-  {id: 2, title: "шейкер"},
-  {id: 3, title: "расческа"},
-  {id: 4, title: "вставка"},
-  {id: 5, title: "выбор"},
-  {id: 6, title: "быстрая"},
-  {id: 7, title: "слияние"},
-  {id: 8, title: "пирамидальная"},
-  {id: 9, title: "богосорт"},
+  {id: 1, title: "пузырек", method: bubbleSort},
+  {id: 2, title: "шейкер", method: bubbleSort},
+  {id: 3, title: "расческа", method: bubbleSort},
+  {id: 4, title: "вставка", method: bubbleSort},
+  {id: 5, title: "выбор", method: bubbleSort},
+  {id: 6, title: "быстрая", method: bubbleSort},
+  {id: 7, title: "слияние", method: bubbleSort},
+  {id: 8, title: "пирамидальная", method: bubbleSort},
+  {id: 9, title: "богосорт", method: bubbleSort},
 ];
 
 export {

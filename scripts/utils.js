@@ -1,3 +1,5 @@
+
+
 const getReferenceArr = () => {
   let result = [];
   for (let i = 1; i <= 100; i++) {
@@ -42,8 +44,17 @@ const closeCard = (card) => {
   card.classList.add("card_type_inactive");
 };
 
+const openCard = (e, card, arr) => {
+  const idItem = getId(e.target.id);
+  let method = getMethodById(arr, idItem);
+  card.classList.remove("card_type_inactive");
+  console.log(method);
+}
+
 const getId = (str) => {
-  return Number(str[str.length - 1]);
+  let id = Number(str[str.length - 1]);
+  isNaN(id) ? (id = 0) : id;
+  return id;
 };
 
 const getMethodById = (arr, id) => {
@@ -53,7 +64,6 @@ const getMethodById = (arr, id) => {
   return result[0]["method"];
 };
 
-
 export {
   getReferenceArr,
   getMainArr,
@@ -61,6 +71,7 @@ export {
   disableButton,
   enableButton,
   closeCard,
+  openCard,
   getId,
   getMethodById,
 };

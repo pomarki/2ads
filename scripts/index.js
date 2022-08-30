@@ -4,6 +4,7 @@ import {
   disableButton,
   enableButton,
   closeCard,
+  openCard,
   getId,
   getMethodById,
 } from "./utils.js";
@@ -22,13 +23,14 @@ import {
   PAUSE_DURATION,
 } from "./data.js";
 
-import { bubbleSort } from "./bubble.js";
-import { ButtonCard } from "../components/ButtonCard.js";
+/* import { bubbleSort } from "./bubble.js"; */
+import { Link } from "../components/LinkCard.js";
 
 let mixedArr = [];
 let intermediateArr = [];
 let iterations = 0;
 let sorted;
+let sortMethod;
 let sortButtonActive = true;
 
 const clearScreen = (item) => {
@@ -48,7 +50,7 @@ const renderRow = (arr) => {
     screen.fillRect(i * 9 + 40, 10, 3, arr[i] * 2);
   }
 };
-
+    
 const renderMixRow = () => {
   mixedArr = getMainArr(referenceArray);
   clearScreen(screen);
@@ -93,21 +95,12 @@ closeButton.addEventListener("click", () => {
 });
 
 initialCards.forEach((item) => {
-const cardButton = new ButtonCard(item);
+const cardButton = new Link(item);
 const buttonElement = cardButton.generateCard();
 
 mainList.append(buttonElement);
 
 })
 
-/* initialCards.forEach((item) => {
-  const buttonElement = document
-    .getElementById("button-card-template")
-    .content.querySelector(".main__card")
-    .cloneNode(true);
-  buttonElement.textContent = item.title;
 
-  mainList.append(buttonElement);
-}); */
-
-mainList.addEventListener("click", (e) => {console.log(e.target.id)});
+mainList.addEventListener("click", (e) => {openCard(e, actualCard, initialCards)});

@@ -1,33 +1,24 @@
 import { MainCard } from "./MainCard.js";
-class ButtonCard {
+class Link {
   constructor(options) {
     this._title = options.title;
     this._id = options.id;
   }
 
   _getTemplate() {
-    const buttonElement = document
+    const linkElement = document
       .getElementById("button-card-template")
       .content.querySelector(".main__card")
       .cloneNode(true);
-    return buttonElement;
+    return linkElement;
   }
 
   generateCard() {
     this._element = this._getTemplate();
     this._element.setAttribute("id", `card-link${this._id}`);
     this._element.textContent = this._title;
-
-    /* this._setEventListeners(); */
-
     return this._element;
   }
-
-  /*   _setEventListeners() {
-    this._element.addEventListener("click", () => {
-      console.log(this._title);
-    });
-  } */
 }
 
-export { ButtonCard };
+export { Link };
