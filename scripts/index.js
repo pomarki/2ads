@@ -60,9 +60,11 @@ const renderMixRow = () => {
 
 const sortedArr = () => {
   sortButtonActive = !sortButtonActive;
+  let step = Math.trunc(intermediateArr.length)
   sorted = setInterval(() => {
     clearScreen(screen);
-    intermediateArr = sortMethod(intermediateArr);
+    step = Math.trunc(step / 1.247);
+    intermediateArr = sortMethod(intermediateArr, step);
     renderRow(intermediateArr);
     iterations++;
     sortButton.textContent = "stop";
