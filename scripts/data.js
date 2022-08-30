@@ -1,5 +1,6 @@
 import { getReferenceArr } from "./utils.js";
 import { bubbleSort } from "./bubble.js";
+import { bogoSort } from "./bogosort.js";
 const colorArr = ["#ff595e", "#ffca3a", "#8ac926", "#1982c4", "#6a4c93"];
 const mainScreen = document.getElementById("main-screen");
 const mixButton = document.getElementById("mix-button");
@@ -23,7 +24,7 @@ const initialCards = [
   {id: 6, title: "быстрая", method: bubbleSort},
   {id: 7, title: "слияние", method: bubbleSort},
   {id: 8, title: "пирамидальная", method: bubbleSort},
-  {id: 9, title: "богосорт", method: bubbleSort},
+  {id: 9, title: "богосорт", method: bogoSort},
 ];
 
 export {

@@ -25,6 +25,7 @@ import {
 
 /* import { bubbleSort } from "./bubble.js"; */
 import { Link } from "../components/LinkCard.js";
+import { MainCard } from "../components/MainCard.js"
 
 let mixedArr = [];
 let intermediateArr = [];
@@ -50,7 +51,7 @@ const renderRow = (arr) => {
     screen.fillRect(i * 9 + 40, 10, 3, arr[i] * 2);
   }
 };
-    
+
 const renderMixRow = () => {
   mixedArr = getMainArr(referenceArray);
   clearScreen(screen);
@@ -62,7 +63,7 @@ const sortedArr = () => {
   sortButtonActive = !sortButtonActive;
   sorted = setInterval(() => {
     clearScreen(screen);
-    intermediateArr = bubbleSort(intermediateArr);
+    intermediateArr = sortMethod(intermediateArr);
     renderRow(intermediateArr);
     iterations++;
     sortButton.textContent = "stop";
@@ -88,6 +89,16 @@ const renderSortRow = () => {
   sortButtonActive ? sortedArr() : stopRender(sorted);
 };
 
+const openMethodCard = (e) => {
+  openCard(actualCard);
+  const idItem = getId(e.target.id);
+  mixedArr = mixedArr.slice();
+  sortMethod = getMethodById(initialCards, idItem);
+  /* let sortMethodElement = new MainCard;
+  sortMethod = sortMethodElement.calculate(mixedArr); */
+ /*  console.log(method); */
+};
+
 mixButton.addEventListener("click", renderMixRow);
 sortButton.addEventListener("click", renderSortRow);
 closeButton.addEventListener("click", () => {
@@ -95,12 +106,12 @@ closeButton.addEventListener("click", () => {
 });
 
 initialCards.forEach((item) => {
-const cardButton = new Link(item);
-const buttonElement = cardButton.generateCard();
+  const cardButton = new Link(item);
+  const buttonElement = cardButton.generateCard();
 
-mainList.append(buttonElement);
+  mainList.append(buttonElement);
+});
 
-})
-
-
-mainList.addEventListener("click", (e) => {openCard(e, actualCard, initialCards, mixedArr)});
+mainList.addEventListener("click", (e) => {
+  openMethodCard(e);
+});
