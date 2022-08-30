@@ -23,13 +23,12 @@ import {
   PAUSE_DURATION,
 } from "./data.js";
 
-/* import { bubbleSort } from "./bubble.js"; */
 import { Link } from "../components/LinkCard.js";
-import { MainCard } from "../components/MainCard.js"
 
 let mixedArr = [];
 let intermediateArr = [];
 let iterations = 0;
+let iterationsWeight = 0;
 let sorted;
 let sortMethod;
 let sortButtonActive = true;
@@ -67,7 +66,7 @@ const sortedArr = () => {
     renderRow(intermediateArr);
     iterations++;
     sortButton.textContent = "stop";
-    iterationWindow.textContent = iterations;
+    iterationWindow.textContent = iterations * iterationsWeight;
 
     if (checkRow(intermediateArr)) {
       stopRender(sorted);
@@ -93,10 +92,9 @@ const openMethodCard = (e) => {
   openCard(actualCard);
   const idItem = getId(e.target.id);
   mixedArr = mixedArr.slice();
-  sortMethod = getMethodById(initialCards, idItem);
-  /* let sortMethodElement = new MainCard;
-  sortMethod = sortMethodElement.calculate(mixedArr); */
- /*  console.log(method); */
+  sortMethod = getMethodById(initialCards, idItem, "method");
+  iterationsWeight = getMethodById(initialCards, idItem, "weight");
+  console.log(iterationsWeight)
 };
 
 mixButton.addEventListener("click", renderMixRow);
