@@ -1,6 +1,6 @@
 import { getReferenceArr } from "./utils.js";
 
-import { bogoSort, bubbleSort, shakerSort, combSort } from "../algorithms/index.js";
+import { bogoSort, bubbleSort, shakerSort, combSort, insertionSort } from "../algorithms/index.js";
 const colorArr = ["#ff595e", "#ffca3a", "#8ac926", "#1982c4", "#6a4c93"];
 const mainScreen = document.getElementById("main-screen");
 const mixButton = document.getElementById("mix-button");
@@ -9,6 +9,7 @@ const iterationWindow = document.getElementById("iteration-window");
 const closeButton = document.getElementById("close-button");
 const actualCard = document.querySelector(".card__container");
 const mainList = document.querySelector(".main__list");
+const popupe = document.querySelector(".card__popup");
 const referenceArray = getReferenceArr();
 let screen = mainScreen.getContext("2d");
 mainScreen.width = 970;
@@ -19,7 +20,7 @@ const initialCards = [
   { id: 1, title: "пузырек", method: bubbleSort, weight: 1 },
   { id: 2, title: "шейкер", method: shakerSort, weight: 2 },
   { id: 3, title: "расческа", method: combSort, weight: 1 },
-  { id: 4, title: "вставка", method: bubbleSort, weight: 1 },
+  { id: 4, title: "вставка", method: insertionSort, weight: 1 },
   { id: 5, title: "выбор", method: bubbleSort, weight: 1 },
   { id: 6, title: "быстрая", method: bubbleSort, weight: 1 },
   { id: 7, title: "слияние", method: bubbleSort, weight: 1 },
@@ -39,5 +40,6 @@ export {
   referenceArray,
   screen,
   initialCards,
+  popupe,
   PAUSE_DURATION,
 };

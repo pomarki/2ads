@@ -23,29 +23,34 @@
     <main>
       <ul class="main__list"></ul>
     </main>
-    <section class="card__container card_type_inactive">
-      <div class="card__main-screen"><canvas id="main-screen"></canvas></div>
-      <div class="card__button-bar">
-        <button class="card__button card__button_size_m" id="mix-button">
-          mix
-        </button>
-        <button
-          class="card__button card__button_size_m card__button_type_inactive"
-          disabled="disabled"
-          id="sort-button"
-        >
-          sort
-        </button>
+    <section class="card__popup card_type_inactive">
+      <div class="card__container card_type_inactive">
+        <div class="card__main-screen"><canvas id="main-screen"></canvas></div>
+        <div class="card__button-bar">
+          <button class="card__button card__button_size_m" id="mix-button">
+            mix
+          </button>
+          <button
+            class="card__button card__button_size_m card__button_type_inactive"
+            disabled="disabled"
+            id="sort-button"
+          >
+            sort
+          </button>
 
-        <p class="card__iteration-window" id="iteration-window"></p>
-        <button class="card__button-close" id="close-button" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+          <p class="card__iteration-window" id="iteration-window"></p>
+          <button
+            class="card__button-close"
+            id="close-button"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
       </div>
     </section>
     <footer class="footer"></footer>
     <template id="main-card-template"></template>
     <template id="button-card-template"><li class="main__card"></li></template>
-  
   </body>
 </html>

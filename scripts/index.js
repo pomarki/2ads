@@ -20,6 +20,7 @@ import {
   referenceArray,
   screen,
   initialCards,
+  popupe,
   PAUSE_DURATION,
 } from "./data.js";
 
@@ -60,11 +61,14 @@ const renderMixRow = () => {
 
 const sortedArr = () => {
   sortButtonActive = !sortButtonActive;
-  let step = Math.trunc(intermediateArr.length)
+  let step = Math.trunc(intermediateArr.length);
   sorted = setInterval(() => {
     clearScreen(screen);
     step = Math.trunc(step / 1.247);
-    intermediateArr = sortMethod(intermediateArr, step);
+    intermediateArr = sortMethod(intermediateArr, {
+      step: step,
+      iterations: iterations,
+    });
     renderRow(intermediateArr);
     iterations++;
     sortButton.textContent = "stop";
@@ -92,17 +96,18 @@ const renderSortRow = () => {
 
 const openMethodCard = (e) => {
   openCard(actualCard);
+  openCard(popupe);
   const idItem = getId(e.target.id);
   mixedArr = mixedArr.slice();
   sortMethod = getMethodById(initialCards, idItem, "method");
   iterationsWeight = getMethodById(initialCards, idItem, "weight");
-  
 };
 
 mixButton.addEventListener("click", renderMixRow);
 sortButton.addEventListener("click", renderSortRow);
 closeButton.addEventListener("click", () => {
   closeCard(actualCard);
+  closeCard(popupe);
 });
 
 initialCards.forEach((item) => {

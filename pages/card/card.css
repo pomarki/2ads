@@ -19,6 +19,22 @@
   height: 74px;
 } */
 
+
+.card__popup {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+/*   visibility: hidden;
+  opacity: 0; */
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1;
+}
+
 .card__button_size_m {
   display: inline;
   width: 168px;
