@@ -1,22 +1,3 @@
-/* const shakerSort = (arr, { iterations }) => {
-  let subTotal = arr.slice();
-  let rate = Math.trunc(iterations / 100) * 100;
-  let direction = iterations % 2 === 0;
-
-  if (direction) {
-    for (let i = 0; i <= subTotal.length - 2; i++) {
-      if (subTotal[i] > subTotal[i + 1])
-        subTotal.splice(i, 2, subTotal[i + 1], subTotal[i]);
-    }
-  } else {
-    for (let i = subTotal.length - 1; i >= 0; i--) {
-      if (subTotal[i] < subTotal[i - 1])
-        subTotal.splice(i - 1, 2, subTotal[i], subTotal[i - 1]);
-    }
-  }
-
-  return subTotal;
-}; */
 
 const shakerSort = (arr, { iterations }) => {
   let subTotal = arr.slice();

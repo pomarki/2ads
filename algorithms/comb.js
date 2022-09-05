@@ -22,4 +22,19 @@ const combSort = (arr, { step }) => {
   return subTotal;
 };
 
+/* const combSort = (arr, { step, iterations }) => {
+  let subTotal = arr.slice();
+  let rate = Math.trunc(iterations / 100) * 100;
+  let i = iterations - rate;
+
+  let a = subTotal[i];
+  let b = subTotal[i + step];
+
+  if (a > b) {
+    change(subTotal, i, i + step);
+  }
+console.log(subTotal)
+  return subTotal;
+}; */
+
 export { combSort };
