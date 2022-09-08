@@ -33,6 +33,7 @@ let iterationsWeight = 0;
 let sorted;
 let sortMethod;
 let sortButtonActive = true;
+let pauseDuration;
 
 const clearScreen = (item) => {
   item.clearRect(0, 0, mainScreen.width, mainScreen.height);
@@ -84,7 +85,7 @@ const sortedArr = () => {
       sortButton.textContent = "sort";
       return;
     }
-  }, PAUSE_DURATION);
+  }, pauseDuration);
 };
 
 const renderSortRow = () => {
@@ -102,6 +103,8 @@ const openMethodCard = (e) => {
   mixedArr = mixedArr.slice();
   sortMethod = getMethodById(initialCards, idItem, "method");
   iterationsWeight = getMethodById(initialCards, idItem, "weight");
+  pauseDuration = getMethodById(initialCards, idItem, "pauseDuration");
+
 };
 
 mixButton.addEventListener("click", renderMixRow);

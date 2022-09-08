@@ -25,15 +25,15 @@ mainScreen.height = 301;
 const PAUSE_DURATION = 550;
 
 const initialCards = [
-  { id: 1, title: "пузырек", method: bubbleSort, weight: 1 },
-  { id: 2, title: "шейкер", method: shakerSort, weight: 2 },
-  { id: 3, title: "расческа", method: combSort, weight: 1 },
-  { id: 4, title: "вставка", method: insertionSort, weight: 1 },
-  { id: 5, title: "выбор", method: selectionSort, weight: 1 },
-  { id: 6, title: "быстрая", method: quickSort, weight: 1 },
-  { id: 7, title: "слияние", method: bubbleSort, weight: 1 },
-  { id: 8, title: "пирамидальная", method: bubbleSort, weight: 1 },
-  { id: 9, title: "богосорт", method: bogoSort, weight: 1 },
+  { id: 1, title: "пузырек", method: bubbleSort, weight: 1, pauseDuration: 5 },
+  { id: 2, title: "шейкер", method: shakerSort, weight: 2, pauseDuration: 5 },
+  { id: 3, title: "расческа", method: combSort, weight: 1, pauseDuration: 5 },
+  { id: 4, title: "вставка", method: insertionSort, weight: 1, pauseDuration: 50 },
+  { id: 5, title: "выбор", method: selectionSort, weight: 1, pauseDuration: 20 },
+  { id: 6, title: "быстрая", method: quickSort, weight: 1, pauseDuration: 500 },
+  { id: 7, title: "слияние", method: bubbleSort, weight: 1, pauseDuration: 20 },
+  { id: 8, title: "пирамидальная", method: bubbleSort, weight: 1, pauseDuration: 20 },
+  { id: 9, title: "богосорт", method: bogoSort, weight: 1, pauseDuration: 20 },
 ];
 
 export {
