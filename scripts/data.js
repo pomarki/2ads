@@ -1,6 +1,14 @@
 import { getReferenceArr } from "./utils.js";
 
-import { bogoSort, bubbleSort, shakerSort, combSort, insertionSort, selectionSort } from "../algorithms/index.js";
+import {
+  bogoSort,
+  bubbleSort,
+  shakerSort,
+  combSort,
+  insertionSort,
+  selectionSort,
+  quickSort,
+} from "../algorithms/index.js";
 const colorArr = ["#ff595e", "#ffca3a", "#8ac926", "#1982c4", "#6a4c93"];
 const mainScreen = document.getElementById("main-screen");
 const mixButton = document.getElementById("mix-button");
@@ -22,7 +30,7 @@ const initialCards = [
   { id: 3, title: "расческа", method: combSort, weight: 1 },
   { id: 4, title: "вставка", method: insertionSort, weight: 1 },
   { id: 5, title: "выбор", method: selectionSort, weight: 1 },
-  { id: 6, title: "быстрая", method: bubbleSort, weight: 1 },
+  { id: 6, title: "быстрая", method: quickSort, weight: 1 },
   { id: 7, title: "слияние", method: bubbleSort, weight: 1 },
   { id: 8, title: "пирамидальная", method: bubbleSort, weight: 1 },
   { id: 9, title: "богосорт", method: bogoSort, weight: 1 },

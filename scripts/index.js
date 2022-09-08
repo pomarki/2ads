@@ -45,10 +45,11 @@ const stopRender = (func) => {
 };
 
 const renderRow = (arr) => {
-  for (let i = 0; i <= arr.length - 1; i++) {
-    let color = colorArr[Math.floor(arr[i] / 20)];
+  let renderedArr = arr.flat();
+  for (let i = 0; i <= renderedArr.length - 1; i++) {
+    let color = colorArr[Math.floor(renderedArr[i] / 20)];
     screen.fillStyle = color;
-    screen.fillRect(i * 9 + 40, 10, 3, arr[i] * 2);
+    screen.fillRect(i * 9 + 40, 10, 3, renderedArr[i] * 2);
   }
 };
 
