@@ -1,6 +1,5 @@
 const arr01 = [1, 2, [3, 4], 5, [6, 7, 8, 9, 10], 11];
 
-
 const sortItem = (arr, pivot) => {
   let before = [];
   let after = [];
@@ -26,11 +25,19 @@ const filterItem = (arr) => {
 };
 
 const quickSort = (arr) => {
-  let subTotal = arr.map((item) => {
+  let subTotal;
+
+  if (arr.length === arr.flat().length) {
+    subTotal = sortItem(arr.slice(1, arr.length), arr[0]);
+    //console.log(subTotal)
+    return filterItem(subTotal);
+  }
+
+  subTotal = arr.map((item) => {
     if (Array.isArray(item)) {
       item = sortItem(item.slice(1, item.length), item[0]);
     }
-
+    
     return item;
   });
   let result = filterItem(subTotal.flat(1));

@@ -75,7 +75,7 @@ const sortedArr = () => {
     sortButton.textContent = "stop";
     iterationWindow.textContent = iterations * iterationsWeight;
 
-    if (checkRow(intermediateArr)) {
+    if (checkRow(intermediateArr.flat())) {
       stopRender(sorted);
       intermediateArr.splice(0, 100);
       iterations = 0;

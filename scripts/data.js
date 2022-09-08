@@ -22,7 +22,7 @@ const referenceArray = getReferenceArr();
 let screen = mainScreen.getContext("2d");
 mainScreen.width = 970;
 mainScreen.height = 301;
-const PAUSE_DURATION = 150;
+const PAUSE_DURATION = 550;
 
 const initialCards = [
   { id: 1, title: "пузырек", method: bubbleSort, weight: 1 },
