@@ -5,6 +5,7 @@ import { combSort } from "./comb.js";
 import { insertionSort } from "./insertion.js";
 import { selectionSort } from "./selection.js";
 import { quickSort } from "./quick.js";
+import { mergeSort } from "./merge.js";
 
 export {
   bogoSort,
@@ -14,4 +15,5 @@ export {
   insertionSort,
   selectionSort,
   quickSort,
+  mergeSort,
 };

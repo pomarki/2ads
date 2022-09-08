@@ -8,6 +8,7 @@ import {
   insertionSort,
   selectionSort,
   quickSort,
+  mergeSort,
 } from "../algorithms/index.js";
 const colorArr = ["#ff595e", "#ffca3a", "#8ac926", "#1982c4", "#6a4c93"];
 const mainScreen = document.getElementById("main-screen");
@@ -31,7 +32,7 @@ const initialCards = [
   { id: 4, title: "вставка", method: insertionSort, weight: 1, pauseDuration: 50 },
   { id: 5, title: "выбор", method: selectionSort, weight: 1, pauseDuration: 20 },
   { id: 6, title: "быстрая", method: quickSort, weight: 1, pauseDuration: 500 },
-  { id: 7, title: "слияние", method: bubbleSort, weight: 1, pauseDuration: 20 },
+  { id: 7, title: "слияние", method: mergeSort, weight: 1, pauseDuration: 700 },
   { id: 8, title: "пирамидальная", method: bubbleSort, weight: 1, pauseDuration: 20 },
   { id: 9, title: "богосорт", method: bogoSort, weight: 1, pauseDuration: 20 },
 ];

@@ -1,7 +1,3 @@
-const a = [2, 3, 7, 10];
-const b = [1, 4, 5, 9];
-
-
 const mergeArr = (arrLeft, arrRight) => {
   const arrMerged = [];
 
@@ -24,38 +20,31 @@ const mergeArr = (arrLeft, arrRight) => {
   }
 };
 
-console.log(mergeArr(a, b));
+const convertArr = (arr) => {
+  let result = arr.map((item) => {
+    return [item];
+  });
+  return result;
+};
 
-// i = 0, j = 0
-// 0 < 8
-// a[0] b[0] 2 > 1
-// [1]
-// i = 0, j = 1
+const mergeSort = (arr, { iterations }) => {
+  if (iterations === 0) {
+    arr = convertArr(arr);
+  }
 
-// 1 < 8
-// a[0] b[1] 2 < 4
-// [1, 2]
-// i = 1, j = 1
+  let result = [];
 
-// 2 < 8
-// a[1] b[1] 3 < 4
-// [1, 2, 3]
-// i = 2 j = 1
+  while (true) {
+    if (typeof arr[0] === "undefined") {
+      return result;
+    }
+    if (typeof arr[1] === "undefined") {
+      result.push(arr[0]);
+      return result;
+    }
+    result.push(mergeArr(arr[0], arr[1]));
+    arr.splice(0, 2);
+  }
+};
 
-// 3 < 8
-// a[2] b[1] 7 > 4
-// [1, 2, 3, 4]
-// i = 2 j = 2
-
-// 4 < 8
-// a[2] b[2] 7 > 5
-// [1, 2, 3, 4, 5]
-// i = 2 j = 3
-
-// 5 < 8
-// a[2] b[2] 7 < 9
-// [1, 2, 3, 4, 5, 7]
-// i = 2 j = 4
-
-// 6 < 8
-// a[2] b[4] 7 и undefined
+export { mergeSort };
