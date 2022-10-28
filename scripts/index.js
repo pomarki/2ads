@@ -20,12 +20,14 @@ import {
   mainList,
   referenceArray,
   screen,
+  infoScreen,
   initialCards,
   popupe,
   PAUSE_DURATION,
 } from "./data.js";
 
 import { Link } from "../components/LinkCard.js";
+import { Info } from "../components/InfoText.js";
 
 let mixedArr = [];
 let intermediateArr = [];
@@ -119,7 +121,6 @@ closeButton.addEventListener("click", () => {
 initialCards.forEach((item) => {
   const cardButton = new Link(item);
   const buttonElement = cardButton.generateCard();
-
   mainList.append(buttonElement);
 });
 

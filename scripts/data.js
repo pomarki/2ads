@@ -19,6 +19,7 @@ const closeButton = document.getElementById("close-button");
 const infoButton = document.getElementById("info-button");
 const actualCard = document.querySelector(".card__container");
 const mainList = document.querySelector(".main__list");
+const infoScreen = document.getElementById("info-screen");
 const popupe = document.querySelector(".card__popup");
 const referenceArray = getReferenceArr();
 let screen = mainScreen.getContext("2d");
@@ -50,6 +51,7 @@ export {
   mainList,
   referenceArray,
   screen,
+  infoScreen,
   initialCards,
   popupe,
   PAUSE_DURATION,

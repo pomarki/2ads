@@ -26,6 +26,33 @@
     <section class="card__popup card_type_inactive">
       <div class="card__container card_type_inactive">
         <div class="card__main-screen"><canvas id="main-screen"></canvas></div>
+        <div class="card__info-screen" id="info-screen">
+          <h2 class="card__info-title">Пузырьковая сортировка</h2>
+          <p class="card__info-text">
+            Самый известный и самый простой алгоритм сортировки.
+          </p>
+          <p class="card__info-text">
+            Последовательно сравниваются значения соседних элементов. В случае,
+            если предыдущий оказывается больше последующего (при сортировке по
+            возрастанию), то элементы меняются местами. В результате, элемент
+            всплывает, словно пузырёк, или тонет как топор (при сортировке по
+            убыванию). Но этот алгоритм не назвали
+            <span class="card__info-quote">“Сортировка топором”</span>, потому
+            что слово <span class="card__info-yellow">“топор”</span>
+            звучит мрачно, не то что лёгкое и весёлое слово “пузырёк”.
+          </p>
+          <p class="card__info-text">
+            Алгоритм считается учебным и в здравом уме на практике не
+            применяется.
+          </p>
+          <div class="card__info-note">
+            <p class="card__info-subtitle">СЛОЖНОСТЬ ПО ВРЕМЕНИ</p>
+            <p class="card__info-red">Худшее время: O(n2)</p>
+            <p class="card__info-yellow">Среднее время: O(n2)</p>
+            <p class="card__info-green">Лучшее время: O(n)</p>
+            <p class="card__info-white">Затраты памяти: O(1)</p>
+          </div>
+        </div>
         <div class="card__button-bar">
           <button class="card__button card__button_size_m" id="mix-button">
             mix
@@ -57,7 +84,7 @@
       </div>
     </section>
     <footer class="footer"></footer>
-    <template id="main-card-template"></template>
+    <!-- <template id="main-card-template"></template> -->
     <template id="button-card-template"><li class="main__card"></li></template>
   </body>
 </html>
