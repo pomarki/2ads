@@ -14,6 +14,7 @@ import {
   mixButton,
   sortButton,
   closeButton,
+  infoButton,
   actualCard,
   iterationWindow,
   mainList,
@@ -114,6 +115,7 @@ closeButton.addEventListener("click", () => {
   closeCard(popupe);
 });
 
+// рендеринг карточек с названиями алгоритмов сортировки
 initialCards.forEach((item) => {
   const cardButton = new Link(item);
   const buttonElement = cardButton.generateCard();

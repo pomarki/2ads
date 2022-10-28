@@ -53,7 +53,7 @@
   cursor: auto;
 }
 
-.card__button-close {
+.card__button-small {
   width: 45px;
   height: 45px;
   border: 5px solid #fff;
@@ -62,10 +62,8 @@
   align-items: center;
   justify-content: center;
   background-color: #a8dadc;
-
   justify-self: end;
   transition: background-color 0.4s linear;
-
   margin: 0;
   font-size: 30px;
   font-weight: 900;
@@ -101,7 +99,7 @@
   box-sizing: border-box;
   background-color: #457b9d;
   display: grid;
-  grid-template-columns: 168px 168px 168px 1fr;
+  grid-template-columns: 168px 168px 168px 1fr 1fr;
   grid-template-rows: auto;
   gap: 20px;
 }
@@ -128,6 +126,10 @@
   display: none;
 }
 
+.card__button-small_info {
+  border-radius: 25px;
+}
+
 .card__button_size_s:hover {
   background: center no-repeat url("../../images/stop-button-active.svg");
 }
@@ -140,10 +142,14 @@
   transition: background-color scale 0.9s linear;
 }
 
-.card__button-close:hover {
+.card__button-small:hover {
   background-color: #e63946;
   color: #fff;
   cursor: pointer;
+}
+
+.card__button-small_info:hover {
+  background-color: #8ac926;
 }
 
 .card__iteration-window:hover {

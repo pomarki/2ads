@@ -16,6 +16,7 @@ const mixButton = document.getElementById("mix-button");
 const sortButton = document.getElementById("sort-button");
 const iterationWindow = document.getElementById("iteration-window");
 const closeButton = document.getElementById("close-button");
+const infoButton = document.getElementById("info-button");
 const actualCard = document.querySelector(".card__container");
 const mainList = document.querySelector(".main__list");
 const popupe = document.querySelector(".card__popup");
@@ -43,6 +44,7 @@ export {
   mixButton,
   sortButton,
   closeButton,
+  infoButton,
   iterationWindow,
   actualCard,
   mainList,
