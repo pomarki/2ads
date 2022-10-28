@@ -136,7 +136,8 @@
   background-color: #e63946;
   cursor: pointer;
   color: #fff;
-  transition: background-color 0.6s linear;
+  transform: scale(1.1);
+  transition: background-color scale 0.9s linear;
 }
 
 .card__button-close:hover {
