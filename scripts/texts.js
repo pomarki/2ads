@@ -57,7 +57,7 @@ const parsedText = (str) => {
           default:
             subItem = i;
         }
-        return openP + subItem + closeP;
+        return subItem;
       });
       return res.join("");
     } else {
@@ -81,11 +81,11 @@ let a = [
   "<h2 class='card__info-title'>Пузырьковая сортировка</h2>",
   "<p class='card__info-text'>Самый известный и самый простой алгоритм сортировки.</p>",
   "<p class='card__info-text'>Последовательно сравниваются значения соседних элементов. В случае, если предыдущий оказывается больше последующего (при сортировке по возрастанию), то элементы меняются местами.</p>",
-  "В результате, элемент всплывает, словно пузырёк, или тонет как топор (при сортировке по убыванию). Но этот алгоритм не назвали <span class='card__info-yellow'>“Сортировка топором”</span>, потому что слово <span class='card__info-yellow'>“топор”</span> звучит мрачно, не то что лёгкое и весёлое слово “пузырёк”.",
+  "<p class='card__info-text'>В результате, элемент всплывает, словно пузырёк, или тонет как топор (при сортировке по убыванию). Но этот алгоритм не назвали </p><p class='card__info-text'><span class='card__info-yellow'>“Сортировка топором”</span></p><p class='card__info-text'>, потому что слово </p><p class='card__info-text'><span class='card__info-yellow'>“топор”</span></p><p class='card__info-text'> звучит мрачно, не то что лёгкое и весёлое слово “пузырёк”.</p>",
   "<p class='card__info-text'>Алгоритм считается учебным и в здравом уме на практике не применяется.</p>",
   "<h3 class='card__info-subtitle'>СЛОЖНОСТЬ ПО ВРЕМЕНИ</h3>",
-  "<span class='card__info-red'>Худшее время:</span> O(n2)",
-  "<span class='card__info-yellow'>Среднее время:</span> O(n2)",
-  "<span class='card__info-green'>Лучшее время:</span> O(n)",
-  "<span class='card__info-white'>Затраты памяти:</span> O(1)",
+  "<p class='card__info-text'></p><p class='card__info-text'><span class='card__info-red'>Худшее время:</span></p><p class='card__info-text'> O(n2)</p>",
+  "<p class='card__info-text'></p><p class='card__info-text'><span class='card__info-yellow'>Среднее время:</span></p><p class='card__info-text'> O(n2)</p>",
+  "<p class='card__info-text'></p><p class='card__info-text'><span class='card__info-green'>Лучшее время:</span></p><p class='card__info-text'> O(n)</p>",
+  "<p class='card__info-text'></p><p class='card__info-text'><span class='card__info-white'>Затраты памяти:</span></p><p class='card__info-text'> O(1)</p>",
 ];
