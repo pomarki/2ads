@@ -120,11 +120,11 @@ const openMethodCard = (e) => {
 
 mixButton.addEventListener("click", renderMixRow);
 sortButton.addEventListener("click", renderSortRow);
-//infoButton.addEventListener("click", () => console.log(actualCard));
+
 closeButton.addEventListener("click", () => {
   closeCard(actualCard);
   closeCard(popupe);
-  //infoButton.removeEventListener("click", () => console.log(idItem));
+ 
 });
 
 // рендеринг карточек с названиями алгоритмов сортировки
