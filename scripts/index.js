@@ -15,6 +15,7 @@ import {
   sortButton,
   closeButton,
   infoButton,
+  infoButtonTemplate,
   actualCard,
   iterationWindow,
   mainList,
@@ -108,13 +109,22 @@ const openMethodCard = (e) => {
   iterationsWeight = getMethodById(initialCards, idItem, "weight");
   pauseDuration = getMethodById(initialCards, idItem, "pauseDuration");
 
+  const info = infoButtonTemplate.content
+    .getElementById("info-button")
+    .cloneNode(true);
+  iterationWindow.after(info);
+  document
+    .getElementById("info-button")
+    .addEventListener("click", () => console.log(idItem));
 };
 
 mixButton.addEventListener("click", renderMixRow);
 sortButton.addEventListener("click", renderSortRow);
+//infoButton.addEventListener("click", () => console.log(actualCard));
 closeButton.addEventListener("click", () => {
   closeCard(actualCard);
   closeCard(popupe);
+  //infoButton.removeEventListener("click", () => console.log(idItem));
 });
 
 // рендеринг карточек с названиями алгоритмов сортировки

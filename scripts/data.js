@@ -21,6 +21,7 @@ const actualCard = document.querySelector(".card__container");
 const mainList = document.querySelector(".main__list");
 const infoScreen = document.getElementById("info-screen");
 const popupe = document.querySelector(".card__popup");
+const infoButtonTemplate = document.getElementById("info-button-template");
 const referenceArray = getReferenceArr();
 let screen = mainScreen.getContext("2d");
 mainScreen.width = 970;
@@ -46,6 +47,7 @@ export {
   sortButton,
   closeButton,
   infoButton,
+  infoButtonTemplate,
   iterationWindow,
   actualCard,
   mainList,
